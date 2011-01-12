@@ -1,0 +1,13 @@
+// $Id$
+// vim:ft=javascript
+
+// If your extension references something external, use ARG_WITH
+// ARG_WITH("modbus", "for modbus support", "no");
+
+// Otherwise, use ARG_ENABLE
+// ARG_ENABLE("modbus", "enable modbus support", "no");
+
+if (PHP_MODBUS != "no") {
+	EXTENSION("modbus", "modbus.c");
+}
+
