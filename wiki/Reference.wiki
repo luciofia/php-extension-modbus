@@ -28,4 +28,4 @@ _use_ : $v = modbus_read_input_registers(ref $port, int $id_slave, int $Register
 _read above_
 
 == modbus_write ==
-(under construction)
+(work in progress)
