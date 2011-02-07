@@ -28,4 +28,5 @@ _use_ : $v = modbus_read_input_registers(ref $port, int $id_slave, int $Register
 _read above_
 
 == modbus_write ==
-(work in progress)
+$r = modbus_write(int port, unsigned int device, unsigned int add, unsigned int len, unsigned int * dataw); <br>
+(Sorry, we have to improve this last one)
