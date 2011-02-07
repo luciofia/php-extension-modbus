@@ -291,16 +291,17 @@ PHP_FUNCTION(modbus_write)
 	int dev;
 	int add;
 	int len;
-	int * dataw;
+	int value;
+	int r;
 
-	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "llll", &port, &dev, &add, &len) == FAILURE)
+	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "llll", &port, &dev, &add, &value) == FAILURE)
 	{
 		RETURN_LONG(-2);
 	}
 
-//	modbus_write(port, dev, add, value);
+	r = modbus_write(port, dev, add, 1, &value);
 
-	RETURN_LONG(0);
+	RETURN_LONG(r);
 }
 
 /*
