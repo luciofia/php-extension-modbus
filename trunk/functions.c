@@ -239,8 +239,8 @@ int modbus_write(int port, unsigned int d, unsigned int a, unsigned int len, uns
 
   for (i=0; i<len; i++)
   {
-    *(unsigned int *)&mbuf[n] = *dataw;
-    n += 2;
+    *(unsigned int *)&mbuf[n++] = dataw[i] >> 8;
+    *(unsigned int *)&mbuf[n++] = dataw[i] & 0xff;
   }
 
   crc = crc_update(&mbuf[0], n);
